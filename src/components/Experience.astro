@@ -1,0 +1,51 @@
+---
+import type { Code } from "astro:components"
+import ExperienceItem from "./ExperienceItem.astro"
+
+
+
+const experience = [
+    {
+        date:'01-08-2021 - Current',
+        title:'Front End Developer',
+        description:`Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+         Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, 
+         when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+         It has survived not only five centuries, but also the leap into electronic typesetting, 
+         remaining essentially unchanged. `,
+    },
+    {
+        date:'Aug 2020 - Aug 2021',
+        title:'Web Developer',
+        description:`Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+         Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, 
+         when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+         It has survived not only five centuries, but also the leap into electronic typesetting, 
+         remaining essentially unchanged. `,
+    },
+    {
+        date:'Oct 2019 - Jan 2020',
+        title:'Web Developer (Internship)',
+        description:`Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+         Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, 
+         when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+         It has survived not only five centuries, but also the leap into electronic typesetting, 
+         remaining essentially unchanged. `,
+    },
+]
+---
+
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+
+        {
+            experience.map((experience) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience}/>
+            </li>
+            ))
+        }
+        
+       
+    
+</ol>
