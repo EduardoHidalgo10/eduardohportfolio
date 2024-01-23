@@ -1,12 +1,40 @@
-<header class="flex justify-between items-center py-3 w-full xl:w-[1120px] mx-auto mt-3">
-    
-    <img  class="rounded-full size-12" src="../../assets/imgs/avatar.jpg" alt="eduardo photo"/>
+<header
+  class="flex justify-between items-center py-3 w-full xl:w-[1120px] mx-auto md:mx-auto mt-3"
+>
+  <img
+    class="rounded-full size-12"
+    src="../../assets/imgs/avatar.jpg"
+    alt="eduardo photo"
+  />
+  <nav class="flex flex-row gap-x-5 opacity-90 mx-3">
+    <input type="checkbox" id="menu" class="peer hidden" />
 
-    <nav class="flex flex-row gap-x-5 opacity-90 ">
-        <a href="/#top">Home</a>
-        <a href="#experience">Experience</a>
-        <a href="/#projects">Projects</a>
-        <a href="/#contact">Contact</a>
-    </nav>
+    <label
+      for="menu"
+      class="bg-open-menu w-6 h-5 bg-cover bg-center cursor-pointer peer-checked:bg-close-menu transition-all z-50 md:hidden"
+    ></label>
 
+
+    <div
+      class="fixed inset-0 bg-gradient-to-b from-black/50 to-white/10 translate-x-full peer-checked:translate-x-0
+       transition-transform md:static md:translate-x-0 md:bg-none"
+    >
+      <ul
+        class="absolute inset-x-0 top-24 p-12 w-[90%] bg-black mx-auto rounded-md h-max
+         text-center grid gap-6 font-bold text-dark-blue shadow-2xl md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static"
+      >
+        <li><a href="/#top">Home</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        
+      </ul>
+
+      
+
+      
+    </div>
+  </nav>
 </header>
+
+
