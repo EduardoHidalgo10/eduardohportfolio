@@ -1,12 +1,39 @@
 ---
+import Reactjs from "../icons/Reactjs.astro";
+import Javascript from "../icons/Javascript.astro";
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
+const TAGS = {
+  React: {
+    name:"React.js",
+    icon:Reactjs
+  },
+  Javascript: {
+    name:"Javascript",
+    icon:Javascript
+  },
+  HTML: {
+    name:"HTML",
+    icon:Html
+  },
+  CSS: {
+    name:"CSS",
+    icon:Css
+  },
+  
+}
+
+
 const projects = [
   {
     title: "Project 1",
-    description: "lalalallalalalalalalala",
-    link: "#",
+    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+     Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
+      when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+    link: "https://resume.io/",
     github: "#",
     image: "../../assets/imgs/882shots_so.webp",
-    tags: ["HTML", "JS", "CSS"],
+    tags: [TAGS.React,TAGS.Javascript,TAGS.HTML,TAGS.CSS],
   },
 ];
 ---
@@ -14,14 +41,24 @@ const projects = [
 {
   projects.map(({ title, description, link, github, image, tags }) => (
     <article>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <ul>
-        {tags.map((tag) => (
-          <li>{tag}</li>
-        ))}
-      </ul>
-      <img src={image} alt={title} />
+      <h3 class="text-2xl font-semibold text-blue-300/90 mb-2">{title}</h3>
+      <p class="text-lg text-gray-300/90 dark:text-gray-400 mb-4 text-pretty">{description}</p>
+      <p class="text-1xl mb-3 font-bold">Tech stack:</p>
+      <ul class="flex gap-x-2 flex-row mb-2 flex-wrap md:mt-6">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs py-1 px-2 md:py-5`}>
+                <tag.icon class="size-4" />
+                <br>
+                {tag.name}
+
+                
+              </span>
+            </li>
+          ))}
+        </ul>
+      <img class="rounded shadow-2xl shadow-white/20 mt-5" src={image} alt={title} />
     </article>
   ))
 }
