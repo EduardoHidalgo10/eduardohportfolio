@@ -1,73 +1,92 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
-import Experience from '../components/Experience.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import Projects from '../components/Projects.astro';
-import LinkedIn from '../icons/LinkedIn.astro';
-import Github from '../icons/Github.astro';
-import SocialPill from '../icons/SocialPill.astro';
-import Mail from '../icons//Mail.astro'
-import Briefcase from '../icons/Briefcase.astro';
-import Code from '../icons/Code.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Projects from "../components/Projects.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Github from "../icons/Github.astro";
+import SocialPill from "../icons/SocialPill.astro";
+import Mail from "../icons//Mail.astro";
+import Briefcase from "../icons/Briefcase.astro";
+import Code from "../icons/Code.astro";
 ---
 
-<Layout title="Porfolio de Eduardo Hidalgo - Desarrollador y Programador Web con 4 años de experiencia."
-description="Contrata a Eduardo Hidalgo para crear paginas y aplicaciones web"
+<Layout
+    title="Porfolio de Eduardo Hidalgo - Desarrollador y Programador Web con 4 años de experiencia."
+    description="Contrata a Eduardo Hidalgo para crear paginas y aplicaciones web"
 >
-	<main class="px-4 w-full">
-        <SectionContainer id="top" class="py-44 pb-24">
-            <h1 class="text-white text-3xl md:4xl lg:text-5xl  font-bold flex flex-row gap-x-3 pb-4 lg:pb-6">Eduardo Hidalgo
-                <a href="https://linkedin.com/in/eduardo-antonio-hidalgo" target="_blank" class="flex justify-center items-center">
-        
-                    <Badge>Open to Work</Badge></h1>
-                </a>
+    <main class="px-4 w-full">
+        <div class="flex items-center gap-1 mt-[50px]">
+            <SectionContainer>
+                <img
+                    class="rounded-full w-[180px] h-[180px] mb-5"
+                    src="../../assets/imgs/eduardo.jpg"
+                    alt="eduardo photo"
+                />
+                <div>
+                    <h1
+                        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-1 pb-1 lg:pb-1"
+                    >
+                        Eduardo Hidalgo
+                        <a
+                            href="https://linkedin.com/in/eduardo-antonio-hidalgo"
+                            target="_blank"
+                            class="flex justify-center items-center"
+                        >
+                            <Badge>Open to Work</Badge>
+                        </a>
+                    </h1>
 
-            <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-                <span>+3 years experienced.</span> <span class="text-blue-300/90">Front End Developer.</span> 
-                <span class="text-white">From Santo Domingo, Dominican Republic. </span> 
-    
-            </h2>
+                    <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+                        <span>+4 years experienced.</span>
+                        <span class="text-blue-300/90"
+                            >Front End Developer.</span
+                        >
+                        <span class="text-white"
+                            >From Santo Domingo, Dominican Republic.</span
+                        >
+                    </h2>
+                </div>
+            </SectionContainer>
+        </div>
 
+        <SectionContainer id="top" class="pb-20">
+            <nav class="flex gap-x-4 mt-4 flex-wrap">
+                <SocialPill
+                    href="https://linkedin.com/in/eduardo-antonio-hidalgo"
+                >
+                    <LinkedIn class="size-4 md:size-6" />
+                    LinkedIn
+                </SocialPill>
 
-            <nav class="flex gap-x-4 mt-4 flex-wrap ">
-            
+                <SocialPill href="https://github.com/EduardoHidalgo10">
+                    <Github class="size-4 md:size-6" />
+                    Github
+                </SocialPill>
 
-                    <SocialPill href="https://linkedin.com/in/eduardo-antonio-hidalgo">
-                        <LinkedIn class="size-4  md:size-6"/>
-                        LinkedIn
-                    </SocialPill>
-
-                    <SocialPill href="https://github.com/EduardoHidalgo10">
-                        <Github class="size-4  md:size-6"/>
-                        Github
-                    </SocialPill>
-                    
-
-                    <SocialPill href="mailto:eduardohidalgo0210@gmail.com">
-                        <Mail class="size-4  md:size-6" />
-                        eduardohidalgo0210@gmail.com
-                    </SocialPill>
+                <SocialPill href="mailto:eduardohidalgo0210@gmail.com">
+                    <Mail class="size-4 md:size-6" />
+                    eduardohidalgo0210@gmail.com
+                </SocialPill>
             </nav>
         </SectionContainer>
 
         <SectionContainer id="experience">
-
             <h2 class="text-3xl semi-bold mb-9 flex gap-x-3 items-center">
-                <Briefcase class="size-7"/>
-                Work Experience</h2>
-            <Experience/>
+                <Briefcase class="size-7" />
+                Work Experience
+            </h2>
+            <Experience />
         </SectionContainer>
 
-
         <SectionContainer id="projects">
-
             <h2 class="text-3xl semi-bold mb-9 flex gap-x-3 items-center">
-                <Code class="size-7"/>
-                Projects</h2>
-            <Projects/>
+                <Code class="size-7" />
+                Projects
+            </h2>
+            <Projects />
         </SectionContainer>
     </main>
 </Layout>
-

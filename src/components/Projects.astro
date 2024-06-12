@@ -3,62 +3,98 @@ import Reactjs from "../icons/Reactjs.astro";
 import Javascript from "../icons/Javascript.astro";
 import Html from "../icons/Html.astro";
 import Css from "../icons/Css.astro";
-const TAGS = {
-  React: {
-    name:"React.js",
-    icon:Reactjs
-  },
-  Javascript: {
-    name:"Javascript",
-    icon:Javascript
-  },
-  HTML: {
-    name:"HTML",
-    icon:Html
-  },
-  CSS: {
-    name:"CSS",
-    icon:Css
-  },
-  
-}
+import SocialPill from "../icons/SocialPill.astro";
+import GitHub from "../icons/GitHub.astro";
+import Wordpress from "../icons/Wordpress.astro";
 
+const TAGS = {
+    React: {
+        name: "React.js",
+        icon: Reactjs,
+    },
+    Javascript: {
+        name: "Javascript",
+        icon: Javascript,
+    },
+    HTML: {
+        name: "HTML",
+        icon: Html,
+    },
+    CSS: {
+        name: "CSS",
+        icon: Css,
+    },
+    Wordpress: {
+        name: "Wordpress",
+        icon: Wordpress,
+    },
+};
 
 const projects = [
-  {
-    title: "Project 1",
-    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-     Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-    link: "https://resume.io/",
-    github: "#",
-    image: "../../assets/imgs/882shots_so.webp",
-    tags: [TAGS.React,TAGS.Javascript,TAGS.HTML,TAGS.CSS],
-  },
+    {
+        title: "Indotel Main Website",
+        description: `The main website of INDOTEL(Dominican Institute of Telecommunications) serves as a comprehensive portal for telecommunications information in the Dominican Republic, developed using WordPress with specific services enhanced by React components. Users can explore regulatory updates, consumer guides, and industry news, utilizing robust search functionality and category filters to quickly find information. The site features custom themes and plugins for a seamless user experience. The responsive design ensures optimal viewing across all devices, providing dynamic and interactive features for improved user engagement.`,
+        link: "https://indotel.gob.do/",
+        github: "",
+        image: "../../assets/imgs/966shots_so.png",
+        tags: [
+            TAGS.React,
+            TAGS.Javascript,
+            TAGS.HTML,
+            TAGS.CSS,
+            TAGS.Wordpress,
+        ],
+    },
+    {
+        title: "Country App",
+        description: `This application allows you to browse all the countries in the world.
+     You can filter them by continent or perform an individual search to access detailed information about each country.
+      It was developed using React.js, with a focus on implementing React Router. Additionally, this application offers the functionality to switch between light and dark themes,
+       allowing users to customize their viewing experience according to their preference.
+       This project is part of a challenge hosted on the FrontendMentor platform. `,
+        link: "https://65c52cf937b481044c090bd8--euphonious-llama-5b8886.netlify.app/",
+        github: "https://github.com/EduardoHidalgo10/frontendMentor-Countryapp",
+        image: "../../assets/imgs/330shots_so.png",
+        tags: [TAGS.React, TAGS.Javascript, TAGS.HTML, TAGS.CSS],
+    },
 ];
 ---
 
 {
-  projects.map(({ title, description, link, github, image, tags }) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-blue-300/90 mb-2">{title}</h3>
-      <p class="text-lg text-gray-300/90 dark:text-gray-400 mb-4 text-pretty">{description}</p>
-      <p class="text-1xl mb-3 font-bold">Tech stack:</p>
-      <ul class="flex gap-x-2 flex-row mb-2 flex-wrap md:mt-6">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs py-1 px-2 md:py-5`}>
-                <tag.icon class="size-4" />
-                <br>
-                {tag.name}
+    projects.map(({ title, description, link, github, image, tags }) => (
+        <article class="mt-10">
+            <a href={link}>
+                <h3 class="text-2xl font-semibold text-blue-300/90 mb-2">
+                    {title}
+                </h3>
+            </a>
+            <p class="text-lg text-gray-300/90 dark:text-gray-400 mb-4 text-pretty">
+                {description}
+            </p>
+            <p class="text-1xl mb-3 font-bold">Tech stack:</p>
+            <ul class="flex gap-x-2 flex-row mb-2 flex-wrap md:mt-6">
+                {tags.map((tag) => (
+                    <li>
+                        <span
+                            class={`flex gap-x-2 rounded-full text-xs py-1 px-2 md:py-5`}
+                        >
+                            <tag.icon class="size-4" />
+                            <br />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                class="rounded shadow-2xl shadow-white/20 mt-5"
+                src={image}
+                alt={title}
+            />
 
-                
-              </span>
-            </li>
-          ))}
-        </ul>
-      <img class="rounded shadow-2xl shadow-white/20 mt-5" src={image} alt={title} />
-    </article>
-  ))
+            <SocialPill href={github}>
+                <GitHub class="size-3  md:size-6" />
+                Github Code
+            </SocialPill>
+        </article>
+    ))
 }
