@@ -1,29 +1,15 @@
 <header
     class="flex justify-between items-center py-3 w-full xl:w-[1120px] p-4 mx-auto md:mx-auto mt-3"
 >
-    <h1 class="font-bold text-[22px]">Front End Developer</h1>
-
-    <nav class="flex flex-row gap-x-5 opacity-90 mx-3">
-        <input type="checkbox" id="menu" class="peer hidden" />
-
-        <label
-            for="menu"
-            class="bg-open-menu w-6 h-5 bg-cover bg-center cursor-pointer peer-checked:bg-close-menu transition-all z-50 md:hidden"
-        ></label>
-
-        <div
-            class="fixed inset-0 bg-gradient-to-b from-black/50 to-white/10 translate-x-full peer-checked:translate-x-0
-       transition-transform md:static md:translate-x-0 md:bg-none"
-        >
-            <ul
-                class="absolute inset-x-0 top-24 p-12 w-[90%] bg-black mx-auto rounded-md h-max
-         text-center grid gap-6 font-bold text-dark-blue shadow-2xl md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static"
-            >
-                <li><a href="/#top">Home</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="/#projects">Projects</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
-        </div>
+    <h1 class="hidden md:block font-bold text-[22px]">Front End Developer</h1>
+    <nav
+        class="flex flex-wrap justify-center md:justify-start list-none gap-5 md:flex-row md:list-none md:gap-5 md:items-center font-bold text-[19px]"
+    >
+        <li><a href="/#top" class="block md:inline-block">Home</a></li>
+        <li>
+            <a href="#experience" class="block md:inline-block">Experience</a>
+        </li>
+        <li><a href="/#projects" class="block md:inline-block">Projects</a></li>
+        <li><a href="/#contact" class="block md:inline-block">Contact</a></li>
     </nav>
 </header>
