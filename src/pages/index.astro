@@ -6,11 +6,13 @@ import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Projects from "../components/Projects.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
-import Github from "../icons/Github.astro";
+import Github from "../icons/GitHub.astro";
 import SocialPill from "../icons/SocialPill.astro";
 import Mail from "../icons//Mail.astro";
 import Briefcase from "../icons/Briefcase.astro";
 import Code from "../icons/Code.astro";
+
+
 ---
 
 <Layout
@@ -22,7 +24,7 @@ import Code from "../icons/Code.astro";
             <SectionContainer>
                 <img
                     class="rounded-full w-[180px] h-[180px] mb-5"
-                    src="../../assets/imgs/eduardo.jpg"
+                    src=`/assets/imgs/eduardo.jpg`
                     alt="eduardo photo"
                 />
                 <div>
@@ -40,7 +42,7 @@ import Code from "../icons/Code.astro";
                     </h1>
 
                     <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-                        <span>+4 years experienced.</span>
+                        <span class="text-white">+4 years experienced.</span>
                         <span class="text-blue-300/90"
                             >Front End Developer.</span
                         >
@@ -74,7 +76,7 @@ import Code from "../icons/Code.astro";
         </SectionContainer>
 
         <SectionContainer id="experience">
-            <h2 class="text-3xl semi-bold mb-9 flex gap-x-3 items-center">
+            <h2 class="text-3xl semi-bold mb-9 flex gap-x-3 items-center text-white">
                 <Briefcase class="size-7" />
                 Work Experience
             </h2>
@@ -82,7 +84,7 @@ import Code from "../icons/Code.astro";
         </SectionContainer>
 
         <SectionContainer id="projects">
-            <h2 class="text-3xl semi-bold mb-9 flex gap-x-3 items-center">
+            <h2 class="text-3xl semi-bold mb-9 flex gap-x-3 items-center text-white">
                 <Code class="size-7" />
                 Projects
             </h2>
