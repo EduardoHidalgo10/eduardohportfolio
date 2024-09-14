@@ -7,6 +7,7 @@ import SocialPill from "../icons/SocialPill.astro";
 import GitHub from "../icons/GitHub.astro";
 import Wordpress from "../icons/Wordpress.astro";
 import Angular from "../icons/Angular.astro";
+import TypeScript from "../icons/TypesScript.astro";
 
 const TAGS = {
     React: {
@@ -33,9 +34,24 @@ const TAGS = {
         name: "Angular",
         icon: Angular,
     },
+    Typescript: {
+        name: "TypeScript",
+        icon: TypeScript,
+    },
 };
 
 const projects = [
+    {
+        title: "IP Address Tracker",
+        description: `The IP Tracker is a responsive web application built with Angular, PrimeFlex, and Angular Material.
+          It allows users to track detailed geolocation information for any IP address in real-time. With a user-friendly interface and fast performance,
+           this tool provides valuable insights for both individuals and businesses.`,
+        link: "https://ipaddtracks.netlify.app",
+        github: "https://github.com/Angular-projects-ehg/IpTracker-website",
+        image: "/assets/imgs/397shots_so.png",
+        tags: [TAGS.Angular, TAGS.Typescript, TAGS.HTML, TAGS.CSS],
+    },
+
     {
         title: "Indotel Main Website",
         description: `The main website of INDOTEL(Dominican Institute of Telecommunications) serves as a comprehensive portal for telecommunications information in the Dominican Republic, developed using WordPress with specific services enhanced by React components. Users can explore regulatory updates, consumer guides, and industry news, utilizing robust search functionality and category filters to quickly find information. The site features custom themes and plugins for a seamless user experience. The responsive design ensures optimal viewing across all devices, providing dynamic and interactive features for improved user engagement.`,
@@ -48,7 +64,6 @@ const projects = [
             TAGS.HTML,
             TAGS.CSS,
             TAGS.Wordpress,
-            
         ],
     },
     {
@@ -61,8 +76,7 @@ const projects = [
         link: "https://65c52cf937b481044c090bd8--euphonious-llama-5b8886.netlify.app/",
         github: "https://github.com/EduardoHidalgo10/frontendMentor-Countryapp",
         image: "/assets/imgs/330shots_so.png",
-        tags: [TAGS.React, TAGS.Javascript, TAGS.HTML, TAGS.CSS,
-        ],
+        tags: [TAGS.React, TAGS.Javascript, TAGS.HTML, TAGS.CSS],
     },
 ];
 ---
@@ -92,16 +106,21 @@ const projects = [
                     </li>
                 ))}
             </ul>
-            <img
-                class="rounded shadow-2xl shadow-white/20 mt-5"
-                src={image}
-                alt={title}
-            />
-
-            <SocialPill href={github}>
-                <GitHub class="size-3  md:size-6" />
-                Github Code
-            </SocialPill>
+            <a href={link}>
+                <img
+                    class="rounded shadow-2xl shadow-white/20 mt-5"
+                    src={image}
+                    alt={title}
+                />
+            </a>
+            {github === "" ? (
+                ""
+            ) : (
+                <SocialPill href={github}>
+                    <GitHub class="size-3  md:size-6" />
+                    Github Code
+                </SocialPill>
+            )}
         </article>
     ))
 }
