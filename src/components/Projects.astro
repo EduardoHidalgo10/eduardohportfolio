@@ -45,7 +45,12 @@ const projects = [
         title: "IP Address Tracker",
         description: `The IP Tracker is a responsive web application built with Angular, PrimeFlex, and Angular Material.
           It allows users to track detailed geolocation information for any IP address in real-time. With a user-friendly interface and fast performance,
-           this tool provides valuable insights for both individuals and businesses.`,
+           this tool provides valuable insights for both individuals and businesses. It includes some amazing features such as:`,
+        features: {
+            1: "IP Geolocation: Instantly retrieve city, country, and timezone information for any IP address.",
+            2: "Real-time Tracking: Get live data from any IP address globally.",
+            3: "Modern UI: The design is responsive and sleek, utilizing Angular Material for a consistent and intuitive experience across all devices.",
+        },
         link: "https://ipaddtracks.netlify.app",
         github: "https://github.com/Angular-projects-ehg/IpTracker-website",
         image: "/assets/imgs/397shots_so.png",
@@ -54,7 +59,11 @@ const projects = [
 
     {
         title: "Indotel Main Website",
-        description: `The main website of INDOTEL(Dominican Institute of Telecommunications) serves as a comprehensive portal for telecommunications information in the Dominican Republic, developed using WordPress with specific services enhanced by React components. Users can explore regulatory updates, consumer guides, and industry news, utilizing robust search functionality and category filters to quickly find information. The site features custom themes and plugins for a seamless user experience. The responsive design ensures optimal viewing across all devices, providing dynamic and interactive features for improved user engagement.`,
+        description: `The main website of INDOTEL(Dominican Institute of Telecommunications)
+         serves as a comprehensive portal for telecommunications information in the Dominican Republic,
+          developed using WordPress with specific services enhanced by React components. Users can explore regulatory updates,
+           consumer guides, and industry news. The site features has a Wordpress custom theme and plugins for a seamless user experience.
+            The responsive design ensures optimal viewing across all devices, providing dynamic and interactive features for improved user engagement.`,
         link: "https://indotel.gob.do/",
         github: "",
         image: "/assets/imgs/966shots_so.png",
@@ -70,10 +79,10 @@ const projects = [
         title: "Country App",
         description: `This application allows you to browse all the countries in the world.
      You can filter them by continent or perform an individual search to access detailed information about each country.
-      It was developed using React.js, with a focus on implementing React Router. Additionally, this application offers the functionality to switch between light and dark themes,
-       allowing users to customize their viewing experience according to their preference.
+      It was developed using React.js, with a focus on implementing React Router. Additionally, this application offers the functionality 
+      to switch between light and dark themes, allowing users to customize their viewing experience according to their preference.
        This project is part of a challenge hosted on the FrontendMentor platform. `,
-        link: "https://65c52cf937b481044c090bd8--euphonious-llama-5b8886.netlify.app/",
+        link: "https://countriesdataapps.netlify.app/",
         github: "https://github.com/EduardoHidalgo10/frontendMentor-Countryapp",
         image: "/assets/imgs/330shots_so.png",
         tags: [TAGS.React, TAGS.Javascript, TAGS.HTML, TAGS.CSS],
@@ -82,45 +91,57 @@ const projects = [
 ---
 
 {
-    projects.map(({ title, description, link, github, image, tags }) => (
-        <article class="mt-10">
-            <a href={link}>
-                <h3 class="text-2xl font-semibold text-blue-300/90 mb-2">
-                    {title}
-                </h3>
-            </a>
-            <p class="text-lg text-gray-300/90 dark:text-gray-400 mb-4 text-pretty">
-                {description}
-            </p>
-            <p class="text-1xl mb-3 font-bold">Tech stack:</p>
-            <ul class="flex gap-x-2 flex-row mb-2 flex-wrap md:mt-6 text-white">
-                {tags.map((tag) => (
-                    <li>
-                        <span
-                            class={`flex gap-x-2 rounded-full text-xs py-1 px-2 md:py-5`}
-                        >
-                            <tag.icon class="size-4" />
-                            <br />
-                            {tag.name}
-                        </span>
-                    </li>
-                ))}
-            </ul>
-            <a href={link}>
-                <img
-                    class="rounded shadow-2xl shadow-white/20 mt-5"
-                    src={image}
-                    alt={title}
-                />
-            </a>
-            {github === "" ? (
-                ""
-            ) : (
-                <SocialPill href={github}>
-                    <GitHub class="size-3  md:size-6" />
-                    Github Code
-                </SocialPill>
-            )}
-        </article>
-    ))
+    projects.map(
+        ({ title, description, features, link, github, image, tags }) => (
+            <article class="mt-10">
+                <a href={link}>
+                    <h3 class="text-2xl font-semibold text-blue-300/90 mb-2">
+                        {title}
+                    </h3>
+                </a>
+                <p class="text-lg text-gray-300/90 dark:text-gray-400 mb-4 text-pretty">
+                    {description}
+                </p>
+                {features && (
+                    <ul class="list-disc ml-5 mb-4">
+                        {Object.values(features).map((feature) => (
+                            <li class="text-gray-300/90 dark:text-gray-400">
+                                {feature}
+                            </li>
+                            <br/>
+                        ))}
+                    </ul>
+                )}
+                <p class="text-1xl mb-3 font-bold">Tech stack:</p>
+                <ul class="flex gap-x-2 flex-row mb-2 flex-wrap md:mt-6 text-white">
+                    {tags.map((tag) => (
+                        <li>
+                            <span
+                                class={`flex gap-x-2 rounded-full text-xs py-1 px-2 md:py-5`}
+                            >
+                                <tag.icon class="size-4" />
+                                <br />
+                                {tag.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+                <a href={link}>
+                    <img
+                        class="rounded shadow-2xl shadow-white/20 mt-5"
+                        src={image}
+                        alt={title}
+                    />
+                </a>
+                {github === "" ? (
+                    ""
+                ) : (
+                    <SocialPill href={github}>
+                        <GitHub class="size-3  md:size-6" />
+                        Github Code
+                    </SocialPill>
+                )}
+            </article>
+        )
+    )
 }
