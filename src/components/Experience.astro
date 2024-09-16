@@ -1,52 +1,45 @@
 ---
 // import type { Code } from "astro:components"
-import ExperienceItem from "./ExperienceItem.astro"
-
-
+import ExperienceItem from "./ExperienceItem.astro";
 
 const experience = [
-{
-    date: '01-08-2021 - Current',
-    title: 'Front End Developer - Dominican Institute of Telecommunications',
-    description: `
+    {
+        date: "Aug 2021 - Current",
+        title: "Front End Developer - Dominican Institute of Telecommunications",
+        description: `
       As a Frontend Web Developer, I am responsible for implementing new features using ReactJS, HTML5, and CSS3, 
       while also modifying existing web projects to upgrade interfaces, fix bugs, and improve performance.
       Additionally, I am tasked with ensuring that the main web page meets the standards required by the Dominican state for government web pages.
       
      In this role, I have been successful in delivering high-quality work while maintaining strict attention to detail. My expertise in frontend web development, 
       combined with my ability to work collaboratively with team members, has resulted in the successful completion of several projects.`,
-    city:'Santo Domingo - Dominican Republic'
-  },
+        city: "Santo Domingo - Dominican Republic",
+    },
     {
-        date:'Aug 2020 - Aug 2021',
-        title:'Web Developer - TousCorp (Remote)',
-        description:`I was responsible for designing, maintaining, and implementing new features in the company's core application.
+        date: "Aug 2020 - Aug 2021",
+        title: "Web Developer - TousCorp (Remote)",
+        description: `I was responsible for designing, maintaining, and implementing new features in the company's core application.
          I utilized my skills and knowledge in HTML5, CSS3, and JavaScript on the frontend and Golang on the backend, as well as MySQL to manage data.
 
         In this role, I worked closely with my team members to identify areas for improvement and implemented creative solutions
          that improved the application's functionality and user experience.`,
-         city:'Miami - Florida'
+        city: "Miami - Florida",
     },
     {
-        date:'Oct 2019 - Jan 2020',
-        title:'Web Developer (Internship)',
-        description:`As an intern my main functions were to bring technical support and also create small components using React.js.`,
-         city:'Santo Domingo - Dominican Republic'
+        date: "Oct 2019 - Jan 2020",
+        title: "Web Developer (Internship)",
+        description: `As an intern my main functions were to bring technical support and also create small components using React.js.`,
+        city: "Santo Domingo - Dominican Republic",
     },
-]
+];
 ---
 
-
 <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
-
-        {
-            experience.map((experience) => (
+    {
+        experience.map((experience) => (
             <li class="mb-10 ms-4">
-                <ExperienceItem {...experience}/>
+                <ExperienceItem {...experience} />
             </li>
-            ))
-        }
-        
-       
-    
+        ))
+    }
 </ol>

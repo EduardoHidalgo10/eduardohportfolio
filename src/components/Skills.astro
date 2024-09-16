@@ -1,0 +1,76 @@
+---
+import Reactjs from "../icons/Reactjs.astro";
+import Javascript from "../icons/Javascript.astro";
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
+import Wordpress from "../icons/Wordpress.astro";
+import Angular from "../icons/Angular.astro";
+import TypeScript from "../icons/TypesScript.astro";
+import Mysql from "../icons/Mysql.astro";
+import tailwindCss from "../icons/tailwindCss.astro";
+import Bootstrap from "../icons/Bootstrap.astro";
+import msSQLSERVER from "../icons/sqlServer.astro";
+import Elementor from "../icons/Elementor.astro";
+
+const TAGS = {
+    React: {
+        name: "React.js",
+        icon: Reactjs,
+    },
+    Javascript: {
+        name: "Javascript",
+        icon: Javascript,
+    },
+    HTML: {
+        name: "HTML",
+        icon: Html,
+    },
+    CSS: {
+        name: "CSS",
+        icon: Css,
+    },
+    Wordpress: {
+        name: "Wordpress",
+        icon: Wordpress,
+    },
+    Angular: {
+        name: "Angular",
+        icon: Angular,
+    },
+    Typescript: {
+        name: "TypeScript",
+        icon: TypeScript,
+    },
+    MySQL: {
+        name: "MySQL",
+        icon: Mysql,
+    },
+    tailwindCss: {
+        name: "Tailwind CSS",
+        icon: tailwindCss,
+    },
+    Bootstrap: {
+        name: "Bootstrap",
+        icon: Bootstrap,
+    },
+    SQLSERVER: {
+        name: "SQL SERVER",
+        icon: msSQLSERVER,
+    },
+    Elementor: {
+        name: "Elementor",
+        icon: Elementor,
+    },
+};
+---
+
+<div class="flex flex-wrap gap-4 justify-center">
+    {
+        Object.values(TAGS).map((tag) => (
+            <div class="flex items-center gap-2">
+                <tag.icon class="size-6" />
+                <span>{tag.name}</span>
+            </div>
+        ))
+    }
+</div>

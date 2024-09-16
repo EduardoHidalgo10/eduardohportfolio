@@ -11,8 +11,8 @@ import SocialPill from "../icons/SocialPill.astro";
 import Mail from "../icons//Mail.astro";
 import Briefcase from "../icons/Briefcase.astro";
 import Code from "../icons/Code.astro";
-
-
+import Book from "../icons/Book.astro";
+import Skills from "../components/Skills.astro";
 ---
 
 <Layout
@@ -76,15 +76,29 @@ import Code from "../icons/Code.astro";
         </SectionContainer>
 
         <SectionContainer id="experience">
-            <h2 class="text-3xl semi-bold mb-9 flex gap-x-3 items-center text-white">
+            <h2
+                class="text-3xl semi-bold mb-9 flex gap-x-3 items-center text-white"
+            >
                 <Briefcase class="size-7" />
                 Work Experience
             </h2>
             <Experience />
         </SectionContainer>
 
+        <SectionContainer id="skills" class="mb-10">
+            <h2
+                class="text-3xl semi-bold mb-9 flex gap-x-3 items-center text-white"
+            >
+                <Book class="size-7" />
+                Skills
+            </h2>
+            <Skills />
+        </SectionContainer>
+
         <SectionContainer id="projects">
-            <h2 class="text-3xl semi-bold mb-9 flex gap-x-3 items-center text-white">
+            <h2
+                class="text-3xl semi-bold mb-9 flex gap-x-3 items-center text-white"
+            >
                 <Code class="size-7" />
                 Projects
             </h2>
